@@ -1,0 +1,576 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cutive Mono', monospace;
+    cursor: url('../media/img/mouse-cursor.png'), pointer !important;
+
+}
+
+body {
+    color:blanchedalmond;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    color:blanchedalmond;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1; }
+    .bg-video__content {
+      height: 100%;
+      width: 100%;
+      object-fit: cover; }
+
+.margin-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100vh;
+    align-items: stretch;
+    width: 75%;
+    margin: auto;
+    max-width: 1500px;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 30px 0;
+}
+
+.divider {
+    border: 1px solid blanchedalmond;
+    border-radius: 10px;
+}
+
+.nav-divider {
+    width: 100%;
+}
+
+.header-divider {
+    width: 150px;
+}
+
+/*-NAVIGATION BAR-*/
+
+.navigation {
+    z-index: 10;
+}
+
+    .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 75px;
+    }
+
+        .nav-item {
+            margin: auto 30px;
+        }
+
+       
+
+        /*--Logo--*/
+
+        .nav-logo {
+            font-size: 35px;
+            text-decoration: none;
+            color: blanchedalmond;
+            display: flex;
+            transition: font-size .35s ease-out;
+            
+        }
+
+        /*--Burger--*/
+
+        #nav-burger {
+            width: 30px;
+            height: 20px;
+            position: relative;
+            transform: rotate(0deg);
+            transition: .35s ease-in-out;
+            cursor: pointer;
+        }
+ 
+            /*---burger sticks---*/
+
+            #nav-burger span {
+                display: block;
+                position: absolute;
+                border: 1px solid blanchedalmond;
+                width: 100%;
+                border-radius: 10px;
+                background-color: blanchedalmond;
+                opacity: 1;
+                transition: .35s ease-in-out;
+            }
+        
+            #nav-burger span:nth-child(1) {
+                top: 0px;
+            }
+            
+            #nav-burger span:nth-child(2) {
+                top: 10px;
+            }
+            
+            #nav-burger span:nth-child(3) {
+                top:20px;
+            }
+
+            /*---burger transition---*/
+
+            #nav-burger.open span:nth-child(1) {
+                transform: rotate(-45deg);
+            top:10px;
+            }
+            
+            #nav-burger.open span:nth-child(2) {
+                opacity: 0;
+                }
+            
+            #nav-burger.open span:nth-child(3) {
+                transform: rotate(45deg);
+                top:10px;
+            }
+
+        /*--Nav divider--*/
+
+
+
+
+/*-NAVIGATION MENU*/
+
+#nav-menu {
+    opacity: 0;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(12, 12, 12, 0.449);
+    backdrop-filter: grayscale(100%);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .35s ease-in-out;
+}
+
+    /*--Navigation links--*/
+
+    #nav-menu a {
+    text-decoration: none;
+    margin: 30px 0;
+    font-size: 36px;
+    color: blanchedalmond;
+    transition:  .35s ease-in;
+    }
+
+    .home-link:hover {
+        background-color:rgba(0, 191, 255, 0.266);
+    }
+
+    .about-link:hover {
+        background-color: rgba(240, 230, 140, 0.266);
+
+    }
+
+    .music-link:hover {
+        background-color:rgba(0, 255, 183, 0.266);
+
+    }
+
+    .contact-link:hover {
+        background-color: rgba(255, 20, 145, 0.266);
+
+    }
+
+    /*--Navigation menu transition--*/
+
+    #nav-menu.flex {
+        display: flex;
+    }
+
+    #nav-menu.open {
+        opacity: 1;
+    }
+
+    
+
+
+/*-CONTENT-*/
+
+#content-container {
+    opacity: 1;
+    transition: opacity .35s ease-in-out;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+    /*--Content transition--*/
+
+    #content-container.close {
+        opacity: 0;
+    }
+
+    /*--HOME--*/
+
+    .home-header {
+        flex: 1;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /*--ABOUT--*/
+
+    .about-content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .about-img {
+        width: 40%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .about-text {
+        width: 50%;
+        text-align: justify;
+    }
+
+    .about-text p:last-child {
+        margin: 0px;
+    }
+
+    /*--MUSIC--*/
+
+    .music-format {
+        position: relative;
+        display: flex;
+        justify-content: end;
+        top: -10%;
+        list-style: none;
+    }
+
+    .h-list-item {
+        margin-left: 10px;
+    }
+
+    .music-content {
+        max-height: 70%;
+        display: flex;
+        gap: 3%;
+        flex-wrap: wrap;
+        overflow: scroll;
+    }
+
+    .music-content::-webkit-scrollbar-track
+{
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.music-content::-webkit-scrollbar
+{
+	width: 6px;
+}
+
+.music-content::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: blanchedalmond;
+}
+.music-content::-webkit-scrollbar-corner {
+	background-color: rgba(255, 255, 255, 0);
+
+}
+
+    .music-card {
+        width: 17%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .record-img {
+        margin-bottom: 15px;
+    }
+
+    /*--CONTACT--*/
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .contact-form .input {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 0px;
+        color: antiquewhite;
+        border-bottom: solid 1px blanchedalmond;
+        background-color: #80808021;
+    }
+
+    .contact-form .button {
+        padding: 10px;
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        border: 0;
+        background-color: antiquewhite;
+        color: black;
+
+    }
+
+    /*--CONCERTS--*/
+    
+    .concert-content {
+        max-height: 70%;
+        display: flex;
+        overflow: scroll;
+    }
+
+        .concert-content::-webkit-scrollbar-track
+        {
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .concert-content::-webkit-scrollbar
+        {
+            width: 6px;
+        }
+
+        .concert-content::-webkit-scrollbar-thumb
+        {
+            border-radius: 10px;
+            background-color: blanchedalmond;
+        }
+        .concert-content::-webkit-scrollbar-corner {
+            background-color: rgba(255, 255, 255, 0);
+
+        }
+    
+    .table {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+        margin-right: 3px;
+
+    }
+
+    .table-header th {
+        border-bottom: 2px solid;
+        padding: 20px;
+    }
+
+    .table-body td {
+        border-bottom: 1px solid;
+        padding: 20px;
+    }
+
+    .table-body > tr:last-child > td {
+        border-bottom: 0;
+      }
+
+      .table-body tr:nth-child(odd) {
+        background-color: rgba(12, 12, 12, 0.449);
+      }
+
+    
+
+    /*--FOOTER--*/
+
+    
+
+    .footer {
+        position:absolute;
+        bottom: 0;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, 0);
+    }
+
+    @media (max-width: 1200px) {
+        .margin-container {
+            width: 80%;
+        }
+        
+        .nav-bar {
+            height: 70px;
+        }
+
+        .nav-item {
+            margin: auto 15px;
+        }
+       
+        .music-card {
+            width: 22%;
+        }
+
+        .music-format {
+            
+            justify-content: center;
+            margin-bottom: 30px;
+            top: 0;
+        }
+
+        .about-img {
+            width: 100%;
+            display: none;
+        }
+
+        .about-text {
+            width: 100%;
+            margin-right: 3px;
+        }
+    }
+
+    @media (max-width: 850px) {
+        .music-card {
+            width: 30%;
+        }
+        .table-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .table-header th {
+            width: 50%;
+        }
+
+        .table-body .t-city {
+            width: 50%;
+            border: 0 !important;
+        }
+
+        .table-body .t-day {
+            width: 50%;
+            border: 0 !important;
+        }
+
+        .t-room {
+            width: 50%;
+        }
+
+        .address {
+            display: none;
+        }
+
+        th.t-room {
+            display: none;
+        }
+    
+        .t-hour {
+            display: none;
+    
+        }
+
+        .t-tickets {
+            width: 50%;
+        }
+
+        th.t-tickets {
+            display: none;
+        }
+    }
+
+
+    @media (max-width: 576px) {
+        .margin-container {
+            width: 90%;
+        }
+
+        .nav-bar {
+            height: 65px;
+        }
+
+        .nav-item {
+            margin: auto 10px;
+        }
+
+        .about-content {
+            max-height: 70%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            overflow: scroll;
+        }
+
+        
+        .about-content::-webkit-scrollbar-track
+        {
+            background-color: rgba(255, 255, 255, 0);
+        }
+        
+        .about-content::-webkit-scrollbar
+        {
+            width: 6px;
+        }
+        
+        .about-content::-webkit-scrollbar-thumb
+        {
+            border-radius: 10px;
+            background-color: blanchedalmond;
+        }
+        .about-content::-webkit-scrollbar-corner {
+            background-color: rgba(255, 255, 255, 0);
+        
+        }
+
+        .music-card {
+            width: 48%;
+        }
+
+
+        
+      }
+
+      @media (max-width: 300px) {
+        .music-card {
+            width: 98%;
+        }
+      }
+
+    
+    
+   
+
+
+
