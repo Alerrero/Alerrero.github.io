@@ -236,7 +236,7 @@ a {
     opacity: 1;
     transition: opacity .35s ease-in-out;
     margin-top: 8%;
-    height: 90%;
+    height: 82%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -475,6 +475,9 @@ a {
     }
 
     @media (max-width: 850px) {
+        #content-container {
+            height: 90%;
+        }
         .music-card {
             width: 30%;
         }
