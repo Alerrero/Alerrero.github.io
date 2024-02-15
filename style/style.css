@@ -429,6 +429,7 @@ a {
     @media (max-width: 1200px) {
         .margin-container {
             width: 80%;
+            
         }
         
         .nav-bar {
@@ -515,6 +516,7 @@ a {
     @media (max-width: 576px) {
         .margin-container {
             width: 90%;
+            height: 120vh;
         }
 
         .nav-bar {
